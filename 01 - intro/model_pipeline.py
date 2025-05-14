@@ -5,30 +5,24 @@ from sklearn.linear_model import LinearRegression
 import pandas as pd
 
 
-def vertorize(df):
+def train_preset(df_train, categorical, numerical, target):
     dv = DictVectorizer()
-    
-    return df_vecto
-
-
-def train_preset(df_train):
-
-    train_dict = df_train.to_dict(orient='records')    
+    train_dict = df_train[categorical + numerical].to_dict(orient='records')    
     X_train = dv.fit_transform(train_dict)
     y_train = df_train[target].values
-    return X_train, dv
-
-
-
-def val_preset(df_test, dv):
-    test_dict = df_test.to_dict(orient='records')
-    X_test = dv.transform(test_dict)
     
-    return X_test
+    return X_train , y_train
 
 
-def train_model(X_train, df, target):
-    y_train = df[target].values
+def test_preset(df_test, categorical, numerical, target):
+    dv = DictVectorizer()
+    test_dict = df_test[categorical + numerical].to_dict(orient='records')    
+    X_test = dv.transform(test_dict)
+    y_test = df_test[target].values
+    return X_test,y_test
+
+
+def train_model(X_train, y_train):
     
     # 1. Initialize the model
     model = LinearRegression()
@@ -37,7 +31,6 @@ def train_model(X_train, df, target):
     model.fit(X_train, y_train)
 
     return model
-
 
 
 
