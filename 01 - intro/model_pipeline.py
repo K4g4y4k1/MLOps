@@ -5,11 +5,17 @@ from sklearn.linear_model import LinearRegression
 import pandas as pd
 
 
-def train_preset(df_train):
+def vertorize(df):
     dv = DictVectorizer()
+    
+    return df_vecto
+
+
+def train_preset(df_train):
+
     train_dict = df_train.to_dict(orient='records')    
     X_train = dv.fit_transform(train_dict)
-    
+    y_train = df_train[target].values
     return X_train, dv
 
 
