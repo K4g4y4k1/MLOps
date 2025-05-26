@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/MLOps/02%20-%20Experiment-tracking/Homework%202/mlruns/0/90742a7050b943bfb81a4802dd8f1b4e/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 90742a7050b943bfb81a4802dd8f1b4e
+run_name: skittish-shrimp-222
+run_uuid: 90742a7050b943bfb81a4802dd8f1b4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748122074728
+status: 1
+tags: []
+user_id: codespace
